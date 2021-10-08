@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <title>My Page</title>
+ <script type="text/Javascript">
+                   
+    var name=localStorage.getItem("textvalue");
+    localStorage.setItem("textvalue",name);
+    document.write(('Dear ') +name+ (' Thank you for your enquiry. your 4 digit OTP number has send to your Phone number Enter the OTP'));
+
+    function result(){
+                   
+    var num=2048;   //randon number for Validation 
+    var validateno=document.getElementById("num").value;
+    if(num == validateno)
+    {
+        alert("Validation Successful");
+        document.getElementById("redirect").value;
+        window.location.href="index.html";             
+    }
+    else if(validateno!="")
+    {
+        alert("ReEnter the Otp");
+        document.getElementById(validateno).focus();
+        document.getElementById("num").value='';
+    }
+    else if(validateno >3)
+    {
+        document.getElementById("num").value;
+        window.location.href="error.html";  
+    }
+    
+}  
+  </script>
+       
+    </head>
+    <body>
+        <form>
+        <div>
+        <input  id="num" placeholder="Enter Otp" type="text" required/><br>
+        <br>
+
+        <button id="redirect" onclick="result()" type="button">Validate </button> 
+    
+    </div>
+   </form>
+    </body>
+     
+</html>
